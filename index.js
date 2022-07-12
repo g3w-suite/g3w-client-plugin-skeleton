@@ -2,7 +2,6 @@ import pluginConfig from './config';
 import Service from "./service";
 const {base, inherit} = g3wsdk.core.utils;
 const {Plugin} = g3wsdk.core.plugin;
-const {GUI} = g3wsdk.gui;
 const {addI18nPlugin} = g3wsdk.core.i18n;
 
 const _Plugin = function() {
