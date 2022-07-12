@@ -1,0 +1,1 @@
+# g3w-client-plugin-base-template
