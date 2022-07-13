@@ -6,8 +6,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2 # important!
-      - name: Template Repository Sync
-        uses: ahmadnassri/action-template-repository-sync@v1.2.0
+      - uses: ahmadnassri/action-template-repository-sync@v1.2.0
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           dry-run: true
