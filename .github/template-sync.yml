@@ -1,5 +1,3 @@
-dependents:
-  - "!*-template" # include
 files:
   - ".gitignore"  # include
   - "!README.md" # exclude
