@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Template Repository Sync
-      uses: ahmadnassri/action-template-repository-sync@v1.2.0
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        dry-run: true
--
+      - uses: actions/checkout@v2 # important!
+      - uses: ahmadnassri/action-template-repository-sync@v1.2.0
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          dry-run: true
