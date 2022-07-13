@@ -25,10 +25,6 @@ const _Plugin = function() {
     // need to be call to hide loading icon on map
     this.setReady(true);
   };
-  
-  this.unload = function() {
-    this.service.clear()
-  }
 };
 
 inherit(_Plugin, Plugin);
