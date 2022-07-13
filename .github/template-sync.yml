@@ -1,0 +1,8 @@
+dependents:
+  - "!*-template" # include
+files:
+  - ".gitignore"  # include
+  - "!README.md" # exclude
+   # you probably want to exclude these files:
+  - "!.github/workflows/template-sync.yml"
+  - "!.github/template-sync.yml"
