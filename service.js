@@ -11,6 +11,15 @@ function Service(){
     /**
      *  PLUGIN SERVICE INIT FUNCTION
      */
+  };
+  /**
+   * Method eventualy set if plugin can load or not
+   */
+  this.loadPlugin = function(){
+    /**
+     * Overwrite condition
+     */
+    return true
   }
 }
 
