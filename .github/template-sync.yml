@@ -1,3 +1,5 @@
+additional:
+   - "g3w-client-plugin-*-template" # include
 files:
   - ".gitignore"  # include
   - "!README.md" # exclude
