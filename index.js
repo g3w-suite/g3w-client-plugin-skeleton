@@ -1,32 +1,22 @@
 import pluginConfig from './config';
 import Service from "./service";
 const {base, inherit} = g3wsdk.core.utils;
-const {Plugin} = g3wsdk.core.plugin;
-const {addI18nPlugin} = g3wsdk.core.i18n;
+const {Plugin:BasePlugin} = g3wsdk.core.plugin;
 
-const _Plugin = function() {
-  base(this);
+const Plugin = function() {
   const {name, i18n} = pluginConfig;
-  this.name = name;
-  this.init = function() {
-    // add i18n of the plugin
-    addI18nPlugin({
-      name,
-      config: i18n
-    });
-    this.setService(Service);
-    //get config plugin from server
-    this.config = this.getConfig();
-    //check if plugin is related to current project by gid
-    if (this.registerPlugin(this.config.gid)) this.service.init(this.config);
-    // need to be call to hide loading icon on map
-    this.setReady(true);
-  };
+  base(this, {
+    name,
+    service: Service,
+    i18n
+  });
+  //check if plugin is related to current project by gid
+  if (this.registerPlugin(this.config.gid)) this.service.init(this.config);
+  // need to be call to hide loading icon on map
+  this.setReady(true);
 };
 
-inherit(_Plugin, Plugin);
+inherit(Plugin, BasePlugin);
 
-(function(plugin){
-  plugin.init();
-})(new _Plugin);
+new Plugin();
 
