@@ -17,11 +17,8 @@ const _Plugin = function() {
     this.setService(Service);
     //get config plugin from server
     this.config = this.getConfig();
-    // check if has some condition default true
-    if (this.service.loadPlugin()) {
-      //plugin registry
-      if (this.registerPlugin(this.config.gid)) this.service.init(this.config);
-    }
+    //check if plugin is related to current project by gid
+    if (this.registerPlugin(this.config.gid)) this.service.init(this.config);
     // need to be call to hide loading icon on map
     this.setReady(true);
   };
