@@ -9,7 +9,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "gulp watch",
+    "watch": "gulp watch",
     "build": "gulp build"
   },
   "repository": {
