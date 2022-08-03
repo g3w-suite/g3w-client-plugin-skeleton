@@ -5,6 +5,7 @@ const {Plugin:BasePlugin} = g3wsdk.core.plugin;
 
 const Plugin = function() {
   const {name, i18n} = pluginConfig;
+  // call parent constructor (> v3.4)
   base(this, {
     name,
     service: Service,
