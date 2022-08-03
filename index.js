@@ -10,6 +10,13 @@ const Plugin = function() {
     service: Service,
     i18n
   });
+  // backward compatibility (< v3.5)
+  if (!g3wsdk.version) {
+    this.name = name;
+    g3wsdk.core.i18n.addI18nPlugin({name, config: i18n});
+    this.setService(Service);
+    this.config = this.getConfig();
+  }
   //check if plugin is related to current project by gid
   if (this.registerPlugin(this.config.gid)) this.service.init(this.config);
   // need to be call to hide loading icon on map
